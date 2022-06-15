@@ -1,26 +1,24 @@
 <template>
-  <div class="hello"></div>
+  <div class="hello">
+    <span>{{ age }}</span>
+  </div>
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType } from 'vue'
-interface configType {
-  name: string
-}
+import { defineComponent } from 'vue'
+
+const propType = {
+  msg: String,
+  age: {
+    type: Number,
+    required: true,
+  },
+} as const
 export default defineComponent({
   name: 'HelloWorld',
-  props: {
-    msg: String,
-    age: {
-      type: Number as PropType<number>,
-    },
-    config: {
-      type: Object as PropType<configType>,
-      required: true,
-    },
-  },
+  props: propType,
   mounted() {
-    console.log(this.config.name)
+    this.age
   },
 })
 </script>

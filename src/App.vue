@@ -1,6 +1,10 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld :config="config" msg="Welcome to Your Vue.js + TypeScript App" />
+  <HelloWorld
+    :config="config"
+    msg="Welcome to Your Vue.js + TypeScript App"
+    :age="18"
+  />
 </template>
 
 <script lang="ts">
